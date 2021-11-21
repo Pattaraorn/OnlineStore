@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shopping Cart</title>
 </head>
 
@@ -20,9 +22,9 @@
     <div class="app_container">
         <div id="app">
             <header>
-                <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="background-color: #666666;">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="background-color: #666666; font-family: Georgia, 'Times New Roman', Times, serif;">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="shopping_cart.html">Daisy Keyboard</a>
+                        <a class="navbar-brand" href="shopping_cart.html" style="color: #FCA3A0;">Daisy Keyboard</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +43,7 @@
                             </ul>
                             <form class="d-flex">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <button class="btn btn-outline-secondary" style="color: #FCA3A0; outline-color: #FCA3A0;" type="submit">Search</button>
                             </form>
                         </div>
                     </div>
@@ -101,19 +103,20 @@
                         </small>
                     </p>
                     <!-- Attach onclick event to addToCart method -->
-                    <button @click="addToCart()" class="btn btn-primary btn-block align-bottom">Add to cart</button>
+                    <button @click="addToCart()" class="btn btn-block align-bottom" style="background-color: #FCA3A0;">Add to cart</button>
                 </div>
             </div>
         </div>
     </template>
     <!-- Create template with id cart-item template -->
     <template id="cartitem-template">
-        <div class="p-3 m-2 border rounded">
+        <div class="p-3 m-2 border rounded" >
             <div class="row">
                 <div class="col fw-bold">{{item.name}}</div>
                 <div class="col">Amount: {{item.count}}</div>
+                <div class="col">Price: {{item.price}} THB</div>
                 <div class="col">Subtotal: {{item.subtotal}} THB</div>
-                <div class="col"><button @click="removeFromCart()" class="mx-4 btn btn-danger btn-sm">Remove from cart</button>
+                <div class="col"><button @click="removeFromCart()" class="mx-4 btn btn-danger btn-sm "><i class="fa fa-trash fa-lg"></i></button>
                 </div>
             </div>
         </div>
